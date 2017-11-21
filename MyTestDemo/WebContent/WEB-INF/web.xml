@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MyTestDemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 配置Struts2框架核心Filter名字 -->
+  <filter>
+	  <filter-name>struts2</filter-name>
+	  <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	  <init-param>
+	  	<param-name>struts.il8n.encoding</param-name>
+	  	<param-value>UTF-8</param-value>
+	  </init-param>
+  </filter>
+  <!-- 配置filter拦截的URL -->
+  <filter-mapping>
+  	<!-- 过滤器名称 -->
+  	<filter-name>struts2</filter-name>
+  	<!-- 配置Struts2的核心FilterDispatcher拦截所有.action用户的请求 -->
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+    <filter-mapping>
+  	<!-- 过滤器名称 -->
+  	<filter-name>struts2</filter-name>
+  	<!-- 配置Struts2的核心FilterDispatcher拦截所有.action用户的请求 -->
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+</web-app>
